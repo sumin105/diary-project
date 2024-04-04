@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.thymeleaf.org"
+layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/diarywrite.css}">
+
+    <title>다이어리 작성</title>
+
+</head>
+<body>
+
+<div layout:fragment="content" class="container">
+    <form id="diaryForm" action="/diary/writepro" method="post" enctype="multipart/form-data">
+        <input name="date" type="text" th:value="${date}" readonly>
+        <textarea name="content" rows="10" cols="50"></textarea>
+        <input name="file" type="file" id="image">
+        <button type="submit">저장</button>
+    </form>
+</div>
+
+</body>
+</html>

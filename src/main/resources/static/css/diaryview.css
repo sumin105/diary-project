@@ -1,0 +1,54 @@
+body.diary-view {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.6;
+}
+a.modify, a.delete {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: cornflowerblue;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+a.delete {
+    background-color: indianred;
+}
+a.modify:hover {
+    background-color: dodgerblue;
+}
+a.delete:hover {
+    background-color: orangered;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

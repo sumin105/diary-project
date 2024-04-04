@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org"
+      layout:decorate="~{layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/diarylist.css}">
+
+    <title>다이어리 리스트</title>
+</head>
+
+<body>
+
+<div layout:fragment="content" class="layout">
+    <div class="list">
+        <table>
+            <thead>
+            <tr>
+                <th th:text="${pageTitle}"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="diary : ${list}">
+                <td>
+                    <a class="date-link" th:text="${diary.date}" th:href="@{/diary/view/{date}(date=${diary.date})}"></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination">
+        <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+            <a class="pagination-link" th:if="${page != nowPage}" th:href="@{/diary/list(page = ${page - 1})}" th:text="${page}"></a>
+            <strong class="current-page" th:if="${page == nowPage}" th:text="${page}" style="color:red;"></strong>
+        </th:block>
+    </div>
+</div>
+
+</body>
+</html>

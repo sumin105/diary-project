@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.thymeleaf.org"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+
+    <title>=Hello, diary!</title>
+</head>
+<body>
+<nav th:replace="~{navbar :: navbarFragment}"></nav>
+
+<th:block layout:fragment="content"></th:block>
+
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script src="/js/diaryview.js"></script>
+<script src="/js/diarywrite.js"></script>
+<script src="/js/diarymodify.js"></script>
+<script src="/js/profile.js"></script>
+
+</body>
+</html>

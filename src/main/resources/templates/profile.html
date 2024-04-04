@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.thymeleaf.org"
+layout:decorate="~{layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/profile.css}">
+    <title>프로필</title>
+
+</head>
+<body>
+<div layout:fragment="content" class="profile">
+    <div class="profile-img">
+        <!-- 프로필 사진 창 -->
+        <th:block th:if="${diaryMember.profilepath != null}">
+            <img id="profileImage" th:src="@{${diaryMember.profilepath}}"/> <br/>
+            <!-- 삭제 버튼 -->
+            <div class="remove-profile" onclick="removeProfile()">X</div>
+        </th:block>
+        <th:block th:unless="${diaryMember.profilepath != null}">
+            <img id="defaultImage" th:src="@{/files/member/회원프로필.jpg}"/> <br/>
+        </th:block>
+        <form class="profile-form" id="profileForm" action="/member/profilepro" method="post" enctype="multipart/form-data">
+            <input name="file" type="file" id="image">
+            <button id="saveButton" type="submit" disabled>저장</button>
+        </form>
+    </div>
+
+    <div class="links">
+        <!-- 작성 일기 보기 -->
+        <h2><a th:href="@{/diary/list}">하루 일기 보기</a> </h2>
+        <h2><a th:href="@{/}">아이디 : <span th:text="${diaryMember.loginId}"></span></a></h2>
+        <h2><a th:href="@{/}">이름 : <span th:text="${diaryMember.name}"></span></a></h2>
+        <h2><a th:href="@{/}">이메일 : <span th:text="${diaryMember.email}"></span></a></h2>
+        <h2><a th:href="@{/}">비밀번호 변경</a></h2>
+        <h2><a id="leaveAccount" th:href="@{/member/leaveaccount}">계정 탈퇴</a></h2>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.thymeleaf.org"
+layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/diarymodify.css}">
+
+    <title>다이어리 수정</title>
+
+</head>
+<body>
+
+<div layout:fragment="content" class="container">
+    <!-- 다이어리 수정 폼 -->
+    <form th:action="@{/diary/update/{date}(date = ${date})}" method="post" enctype="multipart/form-data">
+        <input name="date" type="text" th:value="${date}" readonly>
+        <textarea name="content" rows="10" cols="50" th:text="${diary.content}"></textarea>
+        <!-- 기존 다이어리에 이미지가 있는 경우 -->
+        <div th:if="${diary.filepath != null}">
+            <img th:src="@{${diary.filepath}}" alt="이미지 없음" />
+            <!-- 이미지 삭제 체크박스 -->
+            <label for="deleteImageCheckbox">
+            <input type="checkbox" id="deleteImageCheckbox" name="deleteImage" value="true"> 사진 삭제
+            </label>
+        </div>
+
+        <input name="file" type="file" id="image" th:classappend="${diary.filepath != null ? 'hidden' : ''}">
+
+        <button type="submit">저장</button>
+    </form>
+</div>
+
+</body>
+</html>

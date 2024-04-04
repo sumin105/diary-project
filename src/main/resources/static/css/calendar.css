@@ -1,0 +1,74 @@
+body {
+    /* margin: 0px; */
+}
+.calendar-container {
+    margin: 50px;
+    margin-top: 20px;
+    /* margin-top: 20px; */
+}
+.calendar {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.calendar th, .calendar td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.calendar th {
+    height: 50px;
+    background-color: #FFCCCC;
+    text-align: center;
+}
+.calendar td {
+    height: 80px;
+    text-align: left;
+    vertical-align : top;
+}
+.calendar td.written {
+    background-color: lightpink;
+}
+.calendar td:hover {
+    background-color: #FFCCCC;
+    cursor: pointer;
+}
+.calendar-header {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.calendar-header button {
+    font-size: 15px;
+}
+.list-link {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    transform: translateY(-50%);
+    color: cadetblue;
+}
+.login-link, .logout-link {
+    position: absolute;
+    top: 15px;
+    left: 120px;
+    transform: translateY(-50%);
+    color: cornflowerblue;
+}
+.signup-link, .profile-link {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transform: translateY(-50%);
+    color: cadetblue;
+}
+
+.has-diary {
+    background-color: #ffc107;
+    color: #333;
+    font-weight: bold;
+}
+
+button {
+    border-radius: 8px;
+}

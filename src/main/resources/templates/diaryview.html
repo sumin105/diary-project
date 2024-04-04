@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.thymeleaf.org"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/diaryview.css}">
+
+    <title>다이어리 뷰</title>
+
+</head>
+<body>
+
+<div layout:fragment="content" class="container">
+    <h1 th:text="${diary.date}"></h1>
+    <p th:text="${diary.content}"></p>
+    <th:block th:if="${diary.filepath != null}">
+        <img th:src="@{${diary.filepath}}"/> <br/>
+    </th:block>
+    <a th:href="@{/diary/modify/{date}(date = ${diary.date})}" class="modify">수정하기</a>
+    <a href="javascript:void(0);" th:data-uri="@{/diary/delete/{date}(date = ${diary.date})}" class="delete">삭제하기</a>
+</div>
+
+</body>
+</html>

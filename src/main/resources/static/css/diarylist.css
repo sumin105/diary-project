@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+.list {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 16px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+}
+
+th {
+    background-color: mistyrose;
+    font-weight: bold;
+}
+tr:hover {
+    background-color: #f9f9f9;
+}
+.date-link {
+    color: #007bff;
+    text-decoration: none;
+}
+.date-link:hover {
+    text-decoration: underline;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.pagination-link{
+    display: inline-block;
+    color: gray;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.pagination-link:hover{
+    text-decoration: underline;
+}
+
+.current-page {
+    color: red;
+}

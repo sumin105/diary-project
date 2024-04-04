@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="/css/calendar.css">
+    <title>Calendar</title>
+</head>
+<body>
+<!-- 네비게이션바 -->
+<nav th:replace="~{navbar :: navbarFragment}"></nav>
+
+<div class="calendar-container">
+    <div class="calendar-header">
+        <button onclick="prevMonth()"> < </button>
+        <span id="currentMonthYear"></span>
+        <button onclick="nextMonth()"> > </button>
+        <a href="javascript:void(O);" class="list-link" onclick="viewDiaryListByMonth(currentYear, currentMonth + 1)">일기 보기</a>
+    </div>
+
+    <table class="calendar">
+        <thead>
+        <tr>
+            <th>일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+        </tr>
+        </thead>
+        <tbody id="calendar-body">
+        </tbody>
+    </table>
+</div>
+
+<script src="/js/calendar.js"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
